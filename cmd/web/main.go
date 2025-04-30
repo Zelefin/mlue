@@ -13,11 +13,11 @@ import (
 
 	"github.com/alexedwards/scs/redisstore"
 	"github.com/alexedwards/scs/v2"
+	"github.com/glebarez/sqlite"
 	"github.com/gomodule/redigo/redis"
 	"github.com/joho/godotenv"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
-	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
 
@@ -37,7 +37,7 @@ func main() {
 	pool := &redis.Pool{
 		MaxIdle: 10,
 		Dial: func() (redis.Conn, error) {
-			return redis.Dial("tcp", "redis:6379")
+			return redis.Dial("tcp", os.Getenv("REDIS_URL"))
 		},
 	}
 
@@ -47,13 +47,13 @@ func main() {
 	sessionManager.Lifetime = 24 * time.Hour
 	sessionManager.Cookie.Secure = false
 	// init oauth
-	clientid := os.Getenv("GOOGLE_KEY")
-	clientSecret := os.Getenv("GOOGLE_SECRET")
+	clientid := os.Getenv("CLIENT_KEY")
+	clientSecret := os.Getenv("CLIENT_SECRET")
 
 	conf := &oauth2.Config{
 		ClientID:     clientid,
 		ClientSecret: clientSecret,
-		RedirectURL:  "https://mlue.zelefin.top/auth/callback",
+		RedirectURL:  os.Getenv("OAUTH_CALLBACK"),
 		Scopes:       []string{"email", "profile"},
 		Endpoint:     google.Endpoint,
 	}
