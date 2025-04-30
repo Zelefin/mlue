@@ -37,7 +37,7 @@ func main() {
 	pool := &redis.Pool{
 		MaxIdle: 10,
 		Dial: func() (redis.Conn, error) {
-			return redis.Dial("tcp", "localhost:6379")
+			return redis.Dial("tcp", "redis:6379")
 		},
 	}
 
@@ -53,7 +53,7 @@ func main() {
 	conf := &oauth2.Config{
 		ClientID:     clientid,
 		ClientSecret: clientSecret,
-		RedirectURL:  "http://localhost:3000/auth/callback",
+		RedirectURL:  "https://mlue.zelefin.top/auth/callback",
 		Scopes:       []string{"email", "profile"},
 		Endpoint:     google.Endpoint,
 	}
