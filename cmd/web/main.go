@@ -9,6 +9,7 @@ import (
 	"mlue/internal/repository"
 	"net/http"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/alexedwards/scs/redisstore"
@@ -45,7 +46,11 @@ func main() {
 	sessionManager := scs.New()
 	sessionManager.Store = redisstore.New(pool)
 	sessionManager.Lifetime = 24 * time.Hour
-	sessionManager.Cookie.Secure = false
+	secureCookieValue, err := strconv.ParseBool(os.Getenv("SECURE_COOKIE"))
+	if err != nil {
+		panic("no valid value for secure cookie")
+	}
+	sessionManager.Cookie.Secure = secureCookieValue
 	// init oauth
 	clientid := os.Getenv("CLIENT_KEY")
 	clientSecret := os.Getenv("CLIENT_SECRET")
@@ -95,5 +100,5 @@ func main() {
 
 	fmt.Println("heloo :)")
 
-	http.ListenAndServe(":3000", sessionManager.LoadAndSave(mux))
+	http.ListenAndServe(os.Getenv("LISTEN_ADDR"), sessionManager.LoadAndSave(mux))
 }
