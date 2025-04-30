@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Colors</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/main.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">Mlue</a>
+      <button class="nav__toggle" id="navToggle">☰</button>
+      <nav class="nav__menu" id="navMenu">
+        <a href="/?mine=0">All</a>
+        <a href="/?mine=1">Mine</a>
+        <a href="/about">About</a>
+        <a href="/user">
+          <img src="{{ .User.PictureURL }}" alt="avatar" class="nav__avatar">
+        </a>
+        <a href="/auth/logout">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>Discover & Create Colors</h1>
+      <a href="/colors/new" class="button">Create Your Color</a>
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <main class="grid">
+    {{ range .Colors }}
+      <a href="/colors/{{ .ID }}" class="card" style="--bg:{{ .Hex }}">
+        <div class="card__swatch"></div>
+        <div class="card__info">
+          <strong>{{ .UserColorName }}</strong><br>
+          <small>{{ .Hex }}</small>
+        </div>
+      </a>
+    {{ else }}
+      <p>No colors yet. <a href="/colors/new">Be first!</a></p>
+    {{ end }}
+  </main>
+
+  <script>
+    document.getElementById('navToggle').onclick = () => {
+      document.getElementById('navMenu').classList.toggle('nav__menu--open');
+    };
+  </script>
+</body>
+</html>

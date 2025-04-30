@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>About</title>
+	<style>
+		:root {
+			--text: #333;
+			--bg: #f9f9f9;
+			--link: #007acc;
+			--gap: 1rem;
+		}
+
+		body {
+			/* font-family: sans-serif; */
+			color: var(--text);
+			background: var(--bg);
+			margin: 0;
+			padding: 2rem;
+			line-height: 1.6;
+		}
+
+		header {
+			margin-bottom: var(--gap);
+			border-bottom: 2px solid #ccc;
+			padding-bottom: 0.5rem;
+		}
+
+		header h1 {
+			font-size: 1.8rem;
+			margin: 0 0 0.5rem 0;
+		}
+
+		a {
+			color: var(--link);
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		video {
+			margin-top: 1rem;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+		}
+	</style>
+</head>
+<body>
+
+	<header>
+		<h1>About This App</h1>
+		<p>Simple about page. Just create your colors and explore palettes.</p>
+	</header>
+
+	<section>
+		<h4>Video to test colors:</h4>
+		<video width="320" height="240" controls>
+			<source src="/static/video.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+	</section>
+
+	<p><a href="/">← Move back</a></p>
+
+</body>
+</html>

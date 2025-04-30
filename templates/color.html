@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Color #{{.Color.Hex}}</title>
+  <style>
+    .swatch {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin-left: 8px;
+      border: 1px solid #ccc;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <h1>Color Details</h1>
+  <ul>
+    <li><strong>User’s hex:</strong> {{.Color.Hex}}</li>
+    <li><strong>User’s name:</strong> {{.Color.UserColorName}}</li>
+    <li><strong>Real name:</strong> {{.Color.RealColorName}}</li>
+    <li><strong>Exact match:</strong> {{.Color.Match}}</li>
+  </ul>
+
+  <h2>Palette</h2>
+  {{if .PaletteSlice}}
+    <ul>
+    {{range .PaletteSlice}}
+      <li>
+        {{.}}
+        <span class="swatch" style="background-color: {{.}};"></span>
+      </li>
+    {{end}}
+    </ul>
+  {{else}}
+    <p><em>No palette colors.</em></p>
+  {{end}}
+</body>
+</html>
