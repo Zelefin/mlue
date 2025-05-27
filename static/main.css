@@ -108,7 +108,6 @@ body {
 	color: white;
 	text-align: center;
 	padding-top: var(--header-h);
-	/* prevent content hiding behind nav */
 }
 
 .hero h1 {
@@ -127,7 +126,6 @@ body {
 	display: inline-block;
 }
 
-/* GRID */
 .grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));

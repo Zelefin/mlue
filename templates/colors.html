@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="nav">
     <div class="nav__inner">
       <a href="/" class="nav__logo">Mlue</a>
@@ -25,7 +24,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <div>
       <h1>Discover & Create Colors</h1>
@@ -33,7 +31,6 @@
     </div>
   </section>
 
-  <!-- GRID -->
   <main class="grid">
     {{ range .Colors }}
       <a href="/colors/{{ .ID }}" class="card" style="--bg:{{ .Hex }}">
