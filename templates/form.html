@@ -1,45 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Create a Color</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 2rem;
-    }
-    label {
-      display: block;
-      margin-top: 1rem;
-    }
-    input[type="text"], input[type="color"] {
-      margin-top: 0.5rem;
-      padding: 0.5rem;
-    }
-    button {
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-    }
-  </style>
-</head>
-<body>
-  <h1>Create Your Color</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Color</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 2rem;
+      }
+      label {
+        display: block;
+        margin-top: 1rem;
+      }
+      input[type="text"],
+      input[type="color"] {
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+      }
+      button {
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Create Your Color</h1>
 
-  <form method="POST" action="/colors/create">
-    <label>
-      Pick a color:
-      <input type="color" name="hex" required>
-    </label>
+    <form method="POST" action="/colors/create">
+      <label>
+        Pick a color:
+        <input type="color" name="hex" required />
+      </label>
 
-    <label>
-      Give it a name:
-      <input type="text" name="name" placeholder="My Sunset Red" required>
-    </label>
+      <label>
+        Give it a name:
+        <input type="text" name="name" placeholder="My Sunset Red" required />
+      </label>
 
-    <button type="submit">Publish</button>
-  </form>
+      <button type="submit">Publish</button>
+    </form>
 
-  <p><a href="/">← Back to home</a></p>
-</body>
+    <p><a href="/">← Back to home</a></p>
+  </body>
 </html>
-
