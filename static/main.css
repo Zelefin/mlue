@@ -110,9 +110,11 @@ body {
 	padding-top: var(--header-h);
 }
 
-.hero h1 {
-	text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
-}
+/**/
+/* .hero h1 { */
+/* 	text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); */
+/* } */
+/**/
 
 /* BUTTON */
 .button {
