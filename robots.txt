@@ -1,0 +1,8 @@
+User-agent: Yandex
+Disallow: /
+
+User-agent: *
+Disallow:
+
+Sitemap: https://mlue.zelefin.top/sitemap.xml
+
