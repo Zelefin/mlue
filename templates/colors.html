@@ -1,54 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>All Colors</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/static/main.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>All Colors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="keywords"
+      content="color palette, custom colors, hex colors, create color, color swatches, user colors, discover colors, Mlue"
+    />
+    <link rel="stylesheet" href="/static/main.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo">Mlue</a>
+        <button class="nav__toggle" id="navToggle">☰</button>
+        <nav class="nav__menu" id="navMenu">
+          <a href="/?mine=0">All</a>
+          <a href="/?mine=1">Mine</a>
+          <a href="/about">About</a>
+          <a href="/user">
+            <img
+              src="{{ .User.PictureURL }}"
+              alt="avatar"
+              class="nav__avatar"
+            />
+          </a>
+          <a href="/auth/logout">Logout</a>
+        </nav>
+      </div>
+    </header>
 
-  <header class="nav">
-    <div class="nav__inner">
-      <a href="/" class="nav__logo">Mlue</a>
-      <button class="nav__toggle" id="navToggle">☰</button>
-      <nav class="nav__menu" id="navMenu">
-        <a href="/?mine=0">All</a>
-        <a href="/?mine=1">Mine</a>
-        <a href="/about">About</a>
-        <a href="/user">
-          <img src="{{ .User.PictureURL }}" alt="avatar" class="nav__avatar">
-        </a>
-        <a href="/auth/logout">Logout</a>
-      </nav>
-    </div>
-  </header>
+    <section class="hero">
+      <div>
+        <h1>Discover & Create Colors</h1>
+        <a href="/colors/new" class="button">Create Your Color</a>
+      </div>
+    </section>
 
-  <section class="hero">
-    <div>
-      <h1>Discover & Create Colors</h1>
-      <a href="/colors/new" class="button">Create Your Color</a>
-    </div>
-  </section>
-
-  <main class="grid">
-    {{ range .Colors }}
+    <main class="grid">
+      {{ range .Colors }}
       <a href="/colors/{{ .ID }}" class="card" style="--bg:{{ .Hex }}">
         <div class="card__swatch"></div>
         <div class="card__info">
-          <strong>{{ .UserColorName }}</strong><br>
+          <strong>{{ .UserColorName }}</strong><br />
           <small>{{ .Hex }}</small>
         </div>
       </a>
-    {{ else }}
+      {{ else }}
       <p>No colors yet. <a href="/colors/new">Be first!</a></p>
-    {{ end }}
-  </main>
+      {{ end }}
+    </main>
 
-  <script>
-    document.getElementById('navToggle').onclick = () => {
-      document.getElementById('navMenu').classList.toggle('nav__menu--open');
-    };
-  </script>
-</body>
+    <script>
+      document.getElementById("navToggle").onclick = () => {
+        document.getElementById("navMenu").classList.toggle("nav__menu--open");
+      };
+    </script>
+  </body>
 </html>

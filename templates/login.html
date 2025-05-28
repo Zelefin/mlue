@@ -1,68 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="login, sign in, Mlue login, Google login, join color app, authenticate, create account"
+    />
+    <title>Login</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    body, html {
-      height: 100%;
-      font-family: "JetBrainsMono Nerd Font", monospace;
-    }
+      body,
+      html {
+        height: 100%;
+        font-family: "JetBrainsMono Nerd Font", monospace;
+      }
 
-    body {
-      background: linear-gradient(-45deg, #1e3c72, #2a5298, #3b8d99, #6dd5ed);
-      background-size: 400% 400%;
-      animation: gradientBG 12s ease infinite;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
+      body {
+        background: linear-gradient(-45deg, #1e3c72, #2a5298, #3b8d99, #6dd5ed);
+        background-size: 400% 400%;
+        animation: gradientBG 12s ease infinite;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+      }
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
 
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-    }
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+      }
 
-    .login-button {
-      background-color: rgba(255, 255, 255, 0.1);
-      border: 2px solid white;
-      padding: 15px 25px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: white;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
+      .login-button {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 2px solid white;
+        padding: 15px 25px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: white;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
 
-    .login-button:hover {
-      background-color: white;
-      color: #2a5298;
-      transform: scale(1.05);
-    }
-  </style>
-</head>
-<body>
-  <h1>Join Mlue right now!</h1>
-  <a class="login-button" href="/auth/oauth">Login with Google</a>
-</body>
+      .login-button:hover {
+        background-color: white;
+        color: #2a5298;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Join Mlue right now!</h1>
+    <a class="login-button" href="/auth/oauth">Login with Google</a>
+  </body>
 </html>
